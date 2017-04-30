@@ -3,8 +3,35 @@
 	<head>
 		<meta charset="utf-8">
 		<title>GuiderX | Traveler Dashboard</title>
+		<style media="screen">
+			.banner img{
+				width: 20%;
+				height: 20%
+			}
+			.wrapper{
+				background: linear-gradient(to bottom right, #f0f7fb, #3894d1);
+			}
+
+				.wrapper form{
+					margin-bottom: 10px;
+				}
+		</style>
 	</head>
 	<body>
-		<h2>You made it to the Traveler Dashboard!</h2>
+		<div class="wrapper">
+			<div class="banner">
+				{% load staticfiles %}
+				<img src='{% static 'users_app/img/Blue Guiderx.jpg' %}' alt="GuiderX Logo">
+				<h2>Traveler Dashboard</h2>
+				<p>Here are your Guide matches</p>
+			</div>
+			<div>
+				<ul>
+					{% for guide in guideMatches %}
+					<li><a href="/message/guide/{{guide.0.id}}">{{guide.0.name}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>

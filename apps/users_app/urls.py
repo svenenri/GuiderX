@@ -10,5 +10,5 @@ urlpatterns = [
 	url(r'^travelers/dashboard$', views.travelerDashboard, name='travelerDashboard'),
 	url(r'^travelers/signup$', views.travelerSignup, name='travelerSignup'),
 	url(r'^$', views.travelers, name='travelers'),
-	
+
 ]

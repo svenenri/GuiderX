@@ -3,28 +3,41 @@
 	<head>
 		<meta charset="utf-8">
 		<title>GuderX | Become a guide. Make money!</title>
+		<style media="screen">
+			.banner img{
+				width: 20%;
+				height: 20%
+			}
+			.wrapper{
+				background: linear-gradient(to bottom right, #f0f7fb, #3894d1);
+			}
+
+				.wrapper form{
+					margin-bottom: 10px;
+				}
+		</style>
 	</head>
 	<body>
-		<h2>Become A Guide</h2>
-		<form action="/guides/signup" method="post">
-			{% csrf_token %}
-			Your Name: <input type="text" name="name" >
-			Your Email: <input type="text" name="travelerEmail">
-			Your Location:
-			<select name="location">
-				<option value="washington dc">Washington DC</option>
-				<option value="new york">New York</option>
-				<option value="los angeles">Los Angeles</option>
-				<option value="miami">Miami</option>
-			</select>
-			Your Expertise:
-			<select multiple name="expertise">
-				<option value="attractions">Attractions</option>
-				<option value="neighborhoods">Neighborhood Tours</option>
-				<option value="nightlife">Nightlife</option>
-				<option value="restaurants">Restaurants</option>
-			</select>
-			<input type="submit" name="submit" value="Become A Guide">
-		</form>
+		<div class="wrapper">
+			<div class="banner">
+				{% load staticfiles %}
+				<img src='{% static 'users_app/img/Blue Guiderx.jpg' %}' alt="GuiderX Logo">
+				<h2>Become A Guide</h2>
+			</div>
+			<form action="/guides/signup" method="post">
+				{% csrf_token %}
+				Your Name: <input type="text" name="name" >
+				Your Email: <input type="text" name="travelerEmail">
+				Your Phone Number: <input type="number" name="phone">
+				Your Expertise:
+				<select multiple name="expertise">
+					<option value="attractions">Attractions</option>
+					<option value="neighborhoods">Neighborhood Tours</option>
+					<option value="nightlife">Nightlife</option>
+					<option value="restaurants">Restaurants</option>
+				</select>
+				<input type="submit" name="submit" value="Become A Guide">
+			</form>
+		</div>
 	</body>
 </html>

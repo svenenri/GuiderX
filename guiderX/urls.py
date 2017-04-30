@@ -16,5 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
+	url(r'^message/', include('apps.messaging_app.urls', namespace='messages')),
 	url(r'^', include('apps.users_app.urls', namespace='users')),
 ]
