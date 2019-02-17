@@ -12,9 +12,9 @@ def toGuide(request, id):
 
 	matchedGuide = Guide.objects.filter(id=id)
 
-	api_key = '2b5d9743'
+	api_key = 'add_key'
 
-	api_secret = '4ade5efca15868d8'
+	api_secret = 'add_secret'
 
 	client = nexmo.Client(key=api_key, secret=api_secret)
 
@@ -37,9 +37,9 @@ def toTraveler(request):
 
 	traveler = Traveler.objects.filter(id = request.session['userId'])
 
-	api_key = '2b5d9743'
+	api_key = 'add_key'
 
-	api_secret = '4ade5efca15868d8'
+	api_secret = 'add_secret'
 
 	client = nexmo.Client(key=api_key, secret=api_secret)
 
